@@ -3,21 +3,7 @@ import React, { useState,useEffect } from 'react';
 import '@fortawesome/fontawesome-free/css/all.min.css';
 
 export default function ContactUs() {
-  const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    message: ''
-  });
 
-  const handleChange = (e) => {
-    setFormData({ ...formData, [e.target.name]: e.target.value });
-  };
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    console.log("Form submitted:", formData);
-    setFormData({ name: '', email: '', message: '' }); 
-  };
   const [isNavFixed, setIsNavFixed] = useState(false);
 
   useEffect(() => {
@@ -53,14 +39,15 @@ export default function ContactUs() {
         <h1 className="text-2xl md:text-4xl font-bold text-center text-gray-800 mb-8 p-2 font-serif border-b-[2px]">Contact Us</h1>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {/* Contact Form */}
-          <form onSubmit={handleSubmit} className="bg-rose-300 p-8 shadow-md rounded-lg">
+          <form 
+          action="https://formsubmit.co/a0aaae740966ea828d3a90c15b80afbe" method="POST" 
+          className="bg-rose-300 p-8 shadow-md rounded-lg">
             <div className="mb-6">
               <label className="block text-gray-700 font-medium mb-2" htmlFor="name">Name</label>
               <input
                 type="text"
                 name="name"
-                value={formData.name}
-                onChange={handleChange}
+
                 className="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
                 placeholder="Your Name"
                 required
@@ -71,8 +58,7 @@ export default function ContactUs() {
               <input
                 type="email"
                 name="email"
-                value={formData.email}
-                onChange={handleChange}
+
                 className="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
                 placeholder="Your Email"
                 required
@@ -82,8 +68,7 @@ export default function ContactUs() {
               <label className="block text-gray-700 font-medium mb-2" htmlFor="message">Message</label>
               <textarea
                 name="message"
-                value={formData.message}
-                onChange={handleChange}
+
                 className="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
                 placeholder="Your Message"
                 rows="4"
