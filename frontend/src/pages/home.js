@@ -1,4 +1,4 @@
-import { Slider } from "../components/slider";
+import { Slider } from "../components/slider.js";
 import NavBar from "../components/NavBar.js"
 import { FaCalendarAlt } from 'react-icons/fa'; 
 import { useState ,useEffect} from "react";
@@ -95,7 +95,6 @@ export default function Home(){
 
   useEffect(() => {
     const handleScroll = () => {
-      // Set the scroll threshold (e.g., 100px) where NavBar becomes fixed
       if (window.scrollY > 100) {
         setIsNavFixed(true);
       } else {

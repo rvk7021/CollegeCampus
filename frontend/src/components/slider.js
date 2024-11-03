@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import '../css files/Slider.css'; // Ensure your CSS file path is correct
+import '../css files/Slider.css'; 
 
 export const Slider = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -16,7 +16,7 @@ export const Slider = () => {
     const interval = setInterval(() => {
       setCurrentIndex((prevIndex) => (prevIndex + 1) % images.length);
     }, 3000);
-    return () => clearInterval(interval); // Clean up on component unmount
+    return () => clearInterval(interval); 
   }, [images.length]);
 
   // Function to handle dot click
