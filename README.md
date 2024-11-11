@@ -6,9 +6,7 @@ CollegeCampus is a college management website designed to provide a public-facin
 - [Features](#features)
 - [Tech Stack](#tech-stack)
 - [Folder Structure](#folder-structure)
-- [Getting Started](#getting-started)
-  - [Backend Setup](#backend-setup)
-  - [Frontend Setup](#frontend-setup)
+
 
 ## Features
 
